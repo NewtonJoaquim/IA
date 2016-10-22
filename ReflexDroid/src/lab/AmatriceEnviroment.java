@@ -108,6 +108,7 @@ public class AmatriceEnviroment extends AbstractEnvironment {
 				System.out.println("A HUMAN!! WHAT SHOULD I DO??");
 				
 				envState.setLocationState(envState.getAgentLocation(agent), LocationState.None);
+				this.updatePerformanceMeasure(agent, 250);
 			}
 		}
 		if(ACTION_TAKE_OFF == action){
@@ -147,6 +148,7 @@ public class AmatriceEnviroment extends AbstractEnvironment {
 				nextLocation = (agentXPosition +","+ (agentYPosition+1));
 				envState.setAgentLocation(agent, nextLocation + "");
 			}
+			this.updatePerformanceMeasure(agent, -0.5);
 			
 		}
 		if(ACTION_TURN_LEFT_BY_90_DEGREES == action){
